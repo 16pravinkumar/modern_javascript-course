@@ -1,0 +1,61 @@
+shortcuts for if-statements (ternary,guard and default) 
+
+In JavaScript, there are several shortcuts for writing conditional statements using if-statements, including ternary operators, guard clauses, and default values. Here are examples of each:
+
+1. **Ternary Operator**:
+   The ternary operator is a concise way to express a simple if-else statement. It has the form: `condition ? expressionIfTrue : expressionIfFalse`. It's useful when you want to assign a value or perform a simple action based on a condition.
+
+   Example:
+
+   ```javascript
+   // If-else statement
+   if (x > 10) {
+     result = "x is greater than 10";
+   } else {
+     result = "x is not greater than 10";
+   }
+
+   // Ternary operator equivalent
+   result = x > 10 ? "x is greater than 10" : "x is not greater than 10";
+   ```
+
+2. **Guard Clauses**:
+   Guard clauses are used to handle exceptional cases or edge conditions at the beginning of a function. They are particularly useful for early return from a function to avoid deeply nested if-else structures.
+
+   Example:
+
+   ```javascript
+   // Traditional if-else structure
+   function divide(a, b) {
+     if (b === 0) {
+       return "Division by zero is not allowed";
+     } else {
+       return a / b;
+     }
+   }
+
+   // Guard clause
+   function divide(a, b) {
+     if (b === 0) {
+       return "Division by zero is not allowed";
+     }
+     return a / b;
+   }
+   ```
+
+3. **Default Values**:
+   Default values can be assigned to variables or function parameters using the logical OR (`||`) operator. If the value is falsy, the default value is used.
+
+   Example:
+
+   ```javascript
+   // Traditional default value assignment
+   let name = someName || "Stranger";
+
+   // ES6 default parameter
+   function greet(name = "Stranger") {
+     return "Hello, " + name + "!";
+   }
+   ```
+
+These shortcuts can make your code more concise and readable, especially for simple conditional logic. However, it's important to use them judiciously, as overusing shortcuts can lead to reduced code readability in more complex scenarios.
