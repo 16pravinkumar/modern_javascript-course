@@ -70,6 +70,7 @@ more information about objects
 eg 
 let product = {
   name : "Pravin",
+  'delivery-time' : '1 day',
    ['age'] : 20
 }
 
@@ -88,3 +89,74 @@ console.log(product.['delivery-date']) ==> o/p ==> undefined
 | **Example**               | ```javascript const person = { name: 'John', age: 30 }; const key = 'name'; console.log(person[key]); // Output: 'John' ``` | ```javascript const person = { name: 'John', age: 30 }; console.log(person.name); // Output: 'John' ```  |
 
 In summary, bracket notation allows for dynamic key evaluation using expressions and is suitable when dealing with keys that are not valid identifiers. Dot notation, on the other hand, is more concise and suitable for static keys that are valid identifiers.
+
+
+
+
+***********************************************************************************************************************************************
+what is the difference between Json and js object;
+| Feature                        | JSON (JavaScript Object Notation)                                                 | JavaScript Objects                                   |
+|--------------------------------|---------------------------------------------------------------------------------- |------------------------------------------------------|
+| **Syntax**                     | String-based data interchange format with a specific syntax.                      | Part of the JavaScript language, follows JavaScript syntax. |
+| **Data Types**                 | Limited to basic data types: strings, numbers, booleans, objects, arrays, null.   | Supports a wider range of data types, including functions and special objects. |
+| **Property Names**             | Must be enclosed in double quotes.                                                | Can be specified without quotes, but quotes are required if the property name contains special characters or spaces. |
+| **Methods**                    | No methods or functions can be defined in JSON.                                   | Methods and functions can be defined as properties of JavaScript objects. |
+| **Usage**                      | Primarily used for data interchange between different languages and systems.      | Used for organizing data within a JavaScript program. |
+| **Example**                    | ```json {"name": "John", "age": 30} ```                                           | ```javascript const person = { name: 'John', age: 30 }; ``` |
+
+In summary, JSON is a data interchange format that is language-agnostic and primarily used for data exchange between systems, while JavaScript objects are native to the JavaScript language and are used for organizing and manipulating data within JavaScript programs.
+
+
+
+*****************************************************************************************************************************
+question list Built-in JSON Object
+1] how to convert normal js object into JSON Object
+const person = {
+        name: "John",
+        age: 30,
+        isStudent: false,
+        add: function (a, b) {
+          return a + b;
+        },
+        subtract: function (a, b) {
+          return a - b;
+        },
+      };
+
+      console.log(person.add(5, 3)); // Output: 8
+      console.log(person.subtract(8, 3)); // Output: 5
+
+      let jsonFormat = JSON.stringify(person);
+      console.log(jsonFormat); // in this add nad sub will not added in JSON because they both are function
+
+
+2] how to convert  JSON into JS Objects
+const person = {
+        name: "John",
+        age: 30,
+        isStudent: false,
+        add: function (a, b) {
+          return a + b;
+        },
+        subtract: function (a, b) {
+          return a - b;
+        },
+      };
+
+      console.log(person.add(5, 3)); // Output: 8
+      console.log(person.subtract(8, 3)); // Output: 5
+
+      let jsonFormat = JSON.stringify(person);
+      let jsonParse = JSON.parse(jsonFormat)
+      console.log(jsonFormat); // in this add nad sub will not added in JSON because they both are function
+      console.log(jsonParse); // it will convert jsonFormat varaiable into normal objects
+
+
+
+*****************************************************************************************************************************
+
+Built-in Object 
+localstorage ==> used to save data permanently in local device 
+  
+
+
