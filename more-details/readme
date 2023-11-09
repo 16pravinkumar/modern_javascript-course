@@ -157,6 +157,10 @@ const person = {
 
 Built-in Object 
 localstorage ==> used to save data permanently in local device 
+
+
+localStorage.setItem('Message',"Praivn")  // always takes values as string 
+console.log(localStorage.getItem('Message'));
   
 
 
