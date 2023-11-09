@@ -70,9 +70,21 @@ more information about objects
 eg 
 let product = {
   name : "Pravin",
+   ['age'] : 20
 }
 
 console.log(product.name) ==> o/p ==> "Pravin"
 console.log(product.age) ==> o/p ==> undefined
 console.log(product.delivery-date) ==> o/p ==> error becasue it things tha date is some other value it simple term it just things that we are dowing seperation between delivery and date to solve this proble we use below method i.e box notation
 console.log(product.['delivery-date']) ==> o/p ==> undefined
+
+
+
+| Feature                   | Bracket Notation                                                                                                            | Dot Notation                       |
+|---------------------------|---------------------------------|-------------------------------------------------------------------------------------------|
+| **Key Syntax**            | Uses strings or variables enclosed in square brackets: `object['key']`                                                      | Uses the literal key as a string without quotes: `object.key`                         |
+| **Key Evaluation**        | Can dynamically evaluate keys using expressions: `object[variable]`                                                         | Requires a fixed, literal key: `object.variable`                                     |
+| **Usage**                 | Useful when key is dynamic or not a valid identifier, e.g., `object['property-name']`                                       | Suitable for static keys that are valid identifiers, e.g., `object.propertyName`       |
+| **Example**               | ```javascript const person = { name: 'John', age: 30 }; const key = 'name'; console.log(person[key]); // Output: 'John' ``` | ```javascript const person = { name: 'John', age: 30 }; console.log(person.name); // Output: 'John' ```  |
+
+In summary, bracket notation allows for dynamic key evaluation using expressions and is suitable when dealing with keys that are not valid identifiers. Dot notation, on the other hand, is more concise and suitable for static keys that are valid identifiers.
