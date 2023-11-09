@@ -59,3 +59,20 @@ In JavaScript, there are several shortcuts for writing conditional statements us
    ```
 
 These shortcuts can make your code more concise and readable, especially for simple conditional logic. However, it's important to use them judiciously, as overusing shortcuts can lead to reduced code readability in more complex scenarios.
+
+
+
+
+
+********************************************************************************************
+
+more information about objects 
+eg 
+let product = {
+  name : "Pravin",
+}
+
+console.log(product.name) ==> o/p ==> "Pravin"
+console.log(product.age) ==> o/p ==> undefined
+console.log(product.delivery-date) ==> o/p ==> error becasue it things tha date is some other value it simple term it just things that we are dowing seperation between delivery and date to solve this proble we use below method i.e box notation
+console.log(product.['delivery-date']) ==> o/p ==> undefined
