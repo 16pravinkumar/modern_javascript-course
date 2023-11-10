@@ -158,9 +158,124 @@ const person = {
 Built-in Object 
 localstorage ==> used to save data permanently in local device 
 
-
+locak
 localStorage.setItem('Message',"Praivn")  // always takes values as string 
 console.log(localStorage.getItem('Message'));
-  
+
+
+*****************************************************************************************************************************
+what is auto boxing in js ?
+In JavaScript, auto boxing refers to the automatic conversion of primitive data types to their corresponding object wrappers when a method or property is accessed on the primitive value. 
+
+For example, JavaScript has primitive data types such as numbers, strings, and booleans. These primitive types are not objects and do not have properties or methods associated with them. However, when you try to access a property or method on a primitive value, JavaScript automatically converts the primitive value to its corresponding object wrapper, allowing you to use properties and methods.
+
+Here's an example with the string primitive:
+
+```javascript
+var primitiveString = "Hello, World!";
+var result = primitiveString.length; // Accessing the 'length' property
+
+console.log(result); // Outputs the length of the string
+```
+
+In this example, `primitiveString` is a primitive string, but when we access its `length` property, JavaScript auto boxes it by temporarily converting it to a `String` object, allowing us to access the `length` property.
+
+Auto boxing can happen for other primitive types as well, such as numbers and booleans. For numbers, the primitive value is temporarily converted to a `Number` object, and for booleans, it is converted to a `Boolean` object.
+
+While auto boxing can be convenient, it's important to be aware of it, as it may have some performance implications. In many cases, explicitly creating object wrappers may be more efficient if you need to use object properties and methods frequently.
+
+*********************************************************************************************************************************************************
+
+In your code, `obj1` and `obj2` both reference the same object in memory. When you do `const obj2 = obj1;`, you are not creating a new object; instead, you're creating a new reference to the same object. Therefore, when you modify the object through either `obj1` or `obj2`, the changes will be reflected in both variables since they point to the same underlying object.
+
+In your example:
+
+```javascript
+const obj1 = {
+    message: "Pravin"
+};
+
+const obj2 = obj1;  // obj2 now references the same object as obj1
+
+obj2.message = "Kumar";
+
+console.log(obj1);  // Both obj1 and obj2 will now show { message: "Kumar" }
+console.log(obj2);
+```
+
+After you change the `message` property of `obj2`, both `obj1` and `obj2` will reflect that change because they refer to the same object in memory.
+
+If you want to create a new object with the same properties as `obj1` without sharing the reference, you can use methods like `Object.assign` or the spread operator (`...`):
+
+```javascript
+const obj1 = {
+    message: "Pravin"
+};
+
+// Using Object.assign
+const obj2 = Object.assign({}, obj1);
+
+// Using the spread operator
+// const obj2 = { ...obj1 };
+
+obj2.message = "Kumar";
+
+console.log(obj1);  // obj1 remains unchanged
+console.log(obj2);  // obj2 has the modified message property
+```
+
+Now, `obj1` and `obj2` are separate objects, and modifying one won't affect the other.
+
+
+*****************************************************************************************************************************************************
+we cannot directly compare two different objects
+const obj1 = {
+    message: "Pravin",
+};
+
+const obj2 = obj1;
+
+const obj3 = {
+    message: "Pravin",
+};
+
+console.log(obj1 === obj2); // true, because obj2 references the same object as obj1
+console.log(obj1 === obj3); // false, because obj3 have its own reference and obj1 has its own refrence 
+
+**************************************************************************************************************************************************************
+   //some shortcuts for objects
+
+
+      const obj = {
+        message: "Hello there!",
+        price: 200,
+      };
+      //  1} property destructuring
+      let { message, price } = obj;
+      console.log(message); // Hello there!
+
+      // 2} shorthand notation
+      let { message: msg, price: prc } = obj;
+      console.log(msg); // Hello there!
+       
+
+      // 3} shortcuts for method
+      let obj2 = {
+        // message : message
+         message,
+        //  method : function  fun1(){
+        //   return "Hello all"
+        //  }
+
+        // shortcut for above method
+        method(){
+          return 'Hello all'
+        }
+
+      };
+      console.log(message);
+      console.log(obj2.method());
+
+      
 
 
